@@ -1,0 +1,15 @@
+server:
+  port: 7070
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://docker-mysql.cmcsrnl8wfqp.ap-northeast-2.rds.amazonaws.com:3306/TEST
+    username: user
+    password: test4321!
+  messages:
+    basename: messages
+
+logging:
+  level:
+    org.springframework: DEBUG
