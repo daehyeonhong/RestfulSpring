@@ -9,6 +9,10 @@ spring:
     password: test4321!
   messages:
     basename: messages
+  security:
+    user:
+      name: username
+      password: passw0rd!
 
 logging:
   level:
