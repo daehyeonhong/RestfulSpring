@@ -3,12 +3,23 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://docker-mysql.cmcsrnl8wfqp.ap-northeast-2.rds.amazonaws.com:3306/TEST
     username: user
     password: test4321!
+    hikari:
+      connection-test-query: SELECT NOW() FROM DUAL
   messages:
     basename: messages
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+      format_sql: true
+      use_sql_commnets: true
+
   security:
     user:
       name: username
@@ -16,7 +27,8 @@ spring:
 
 logging:
   level:
-    org.springframework: DEBUG
+    org:
+      springframework: DEBUG
 
 management:
   endpoints:
