@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://docker-mysql.cmcsrnl8wfqp.ap-northeast-2.rds.amazonaws.com:3306/TEST
-    username: user
-    password: test4321!
+    url: jdbc:mysql://127.0.0.1:3306/rest
+    username: rest
+    password: 1234
     hikari:
       connection-test-query: SELECT NOW() FROM DUAL
   messages:
@@ -15,21 +15,23 @@ spring:
     show-sql: true
     generate-ddl: true
     defer-datasource-initialization: true
+    database: mysql
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       format_sql: true
       use_sql_commnets: true
-
   security:
     user:
       name: username
       password: passw0rd!
+  devtools:
+    livereload:
+      enabled: true
 
 logging:
   level:
     org:
       springframework: DEBUG
-
 management:
   endpoints:
     web:

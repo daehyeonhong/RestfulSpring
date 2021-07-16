@@ -1,14 +1,9 @@
 package com.spring.restfulwebservice;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.cglib.beans.FixedKeySet;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import static com.spring.restfulwebservice.JavaSolutionTests.TestArray.*;
+import static com.spring.restfulwebservice.JavaSolutionTests.TestArray.create;
 
 public class JavaSolutionTests {
 

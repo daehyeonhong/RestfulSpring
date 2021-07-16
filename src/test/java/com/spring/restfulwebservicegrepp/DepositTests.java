@@ -2,14 +2,18 @@ package com.spring.restfulwebservicegrepp;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Slf4j
 public class DepositTests {
     final int[] deposit1 = {500, 1000, -300, 200, -400, 100, -100};
     final int[] deposit2 = {500, 1000, 2000, -1000, -1500, 500};
+
+    public static int[] copyOf(int[] original, int newLength) {
+        int[] copy = new int[newLength];
+        System.arraycopy(original, 0, copy, 0,
+                Math.min(original.length, newLength));
+        return copy;
+    }
 
     @Test
     public void solutionTest() {
@@ -43,13 +47,6 @@ public class DepositTests {
             }
         }
         return answer;
-    }
-
-    public static int[] copyOf(int[] original, int newLength) {
-        int[] copy = new int[newLength];
-        System.arraycopy(original, 0, copy, 0,
-                Math.min(original.length, newLength));
-        return copy;
     }
 //    public int[] solution(int[] deposit) {
 //        int[] answer = {};
